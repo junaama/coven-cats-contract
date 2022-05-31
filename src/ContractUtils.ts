@@ -30,3 +30,19 @@ export async function getCovenCats(): Promise<ContractUtils<CovenCats>> {
     },
   };
 }
+
+export async function getCovenCatsUpgradeable(): Promise<ContractUtils<CovenCats>> {
+  const Contract = await ethers.getContractFactory(CATS_CONTRACT_NAME);
+  return {
+    deploy: async () => {
+      // Deploy a new smart contract, connected to the first signer by default
+      const contract = await upgrades.deployProxy(Contract)
+
+      return contract;
+    },
+
+    attach: (contractAddress: string) => {
+      return Contract.attach(contractAddress);
+    },
+  };
+}

@@ -13,6 +13,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
+require('@openzeppelin/hardhat-upgrades');
 
 import { OPEN_SEA_PROXY_REGISTRY_ADDRESS } from "./src/Env";
 import {

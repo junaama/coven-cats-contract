@@ -50,5 +50,8 @@
     "ts-node": "^10.4.0",
     "typechain": "^5.2.0",
     "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "@openzeppelin/hardhat-upgrades": "^1.17.0"
   }
 }
